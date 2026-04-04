@@ -4,14 +4,17 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: var(--bg);
 }
 .dark {
-  background-color: hsl(0, 100%, 100%);
-  color: hsl(209, 23%, 22%);
+  --bg: hsl(207, 26%, 17%);
+  --color: hsl(0, 100%, 100%);
+  --shadow: 0px 0px 10px rgba(0, 0, 0, 0.179);
 }
 .light {
-  background-color: hsl(209, 23%, 22%);
-  color: hsl(0, 100%, 100%);
+  --bg: hsl(0, 100%, 100%);
+  --color: hsl(209, 23%, 22%);
+  --shadow: 0px 0px 10px rgba(200, 195, 195, 0.5);
 }
 * {
   font-family: 'Source Code Pro', monospace;
@@ -24,12 +27,15 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  /* background-color: white; */
-  box-shadow: 0px 0px 10px rgb(200, 195, 195);
+  background-color: var(--bg);
+  color: var(--color);
   padding: 0 3rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 100;
 }
 .navbar h1 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 .navbar p {
   cursor: pointer;
@@ -50,6 +56,8 @@ body {
 /* top */
 .countries {
   padding-top: 0.5rem;
+  background-color: var(--bg);
+  min-height: calc(100vh - 70px);
 }
 .top {
   display: flex;
@@ -66,30 +74,40 @@ body {
   width: 100%;
   padding: 0.8rem 1rem 0.8rem 3rem;
   border: none;
-  box-shadow: 2px 2px 5px rgb(200, 195, 195);
   border-radius: 5px;
   outline: none;
+  background-color: var(--bg);
+  color: var(--color);
+  box-shadow: var(--shadow);
+}
+input::placeholder {
+  color: var(--color);
 }
 .input-container i {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
+  color: var(--color);
+  background-color: var(--bg);
 }
 .option-container {
   position: relative;
 }
 .option-container h5 {
-  box-shadow: 2px 2px 5px rgb(200, 195, 195);
+  box-shadow: var(--shadow);
   padding: 0.7rem;
+  background-color: var(--bg);
+  color: var(--color);
 }
 .option-continent {
   z-index: 10;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  box-shadow: 2px 2px 5px rgb(200, 195, 195);
+  background-color: var(--bg);
+  color: var(--color);
+  box-shadow: var(--shadow);
   padding: 0.6rem;
   display: block;
   width: 11rem;
@@ -138,7 +156,9 @@ body {
   gap: 4rem;
 }
 .card {
-  box-shadow: 2px 2px 5px rgb(200, 195, 195);
+  box-shadow: var(--shadow);
+  background-color: var(--bg);
+  color: var(--color);
   border-radius: 0.3rem;
   width: 16rem;
 }

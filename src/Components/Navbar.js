@@ -12,7 +12,7 @@ const Navbar = ({ mode, setMode }) => {
         </div>
         <div>
           <p onClick={() => handleColor()}>
-            <i className='fa-regular fa-moon'></i> {mode} mode
+            <i className='fa-solid fa-moon'></i> {mode} mode
           </p>
         </div>
       </header>
