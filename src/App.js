@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import Countries from './Components/Countries';
+import { Routes, Route } from 'react-router-dom';
+import CountryInf from './Components/CountryInf';
 
 const App = () => {
   const [mode, setMode] = useState('Dark');
@@ -13,7 +15,10 @@ const App = () => {
     <>
       <div className={mode === 'Dark' ? 'light' : 'dark'}>
         <Navbar mode={mode} setMode={setMode} />
-        <Countries />
+        <Routes>
+          <Route path='/' element={<Countries />} />
+          <Route path='/country/:countryName' element={<CountryInf />}></Route>
+        </Routes>
       </div>
     </>
   );

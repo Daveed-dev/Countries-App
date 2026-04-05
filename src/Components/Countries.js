@@ -24,6 +24,20 @@ const Countries = () => {
     const regionMatch = region === '' || value.region === region;
     return regionMatch && searchMatch;
   });
+
+  const getMessage = () => {
+    if (filterCountries.length > 0) return null;
+
+    if (search && region) {
+      return `No results for "${search}" in ${region}`;
+    }
+
+    if (search) {
+      return `No Countries match "${search}"`;
+    }
+
+    return 'No countries found';
+  };
   return (
     <>
       <div className='countries'>
@@ -35,7 +49,7 @@ const Countries = () => {
         />
         <div className='countries-card'>
           {filterCountries.length === 0 && search !== '' ? (
-            <h2 className='not-found'>No country found</h2>
+            <h2 className='not-found'>{getMessage()}</h2>
           ) : (
             filterCountries.map((value, index) => {
               return (

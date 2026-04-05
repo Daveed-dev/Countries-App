@@ -189,3 +189,6 @@ input::placeholder {
     width: 18rem;
   }
 }
+.not-found {
+  color: var(--color);
+}

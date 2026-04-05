@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CountriesCards = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className='card'>
+      <div
+        className='card'
+        onClick={() => navigate(`/country/${props.country}`)}
+      >
         <img src={props.img} alt='' />
         <div className='card-text'>
           <h3>{props.country}</h3>
