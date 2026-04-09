@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar';
 import Countries from './Components/Countries';
 import { Routes, Route } from 'react-router-dom';
 import CountryInf from './Components/CountryInf';
+import data from '../data.json';
 
 const App = () => {
   const [mode, setMode] = useState('Dark');
@@ -17,7 +18,10 @@ const App = () => {
         <Navbar mode={mode} setMode={setMode} />
         <Routes>
           <Route path='/' element={<Countries />} />
-          <Route path='/country/:countryName' element={<CountryInf />}></Route>
+          <Route
+            path='/country/:countryName'
+            element={<CountryInf data={data} />}
+          ></Route>
         </Routes>
       </div>
     </>

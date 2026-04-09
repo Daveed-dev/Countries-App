@@ -61,6 +61,14 @@ const CountriesTop = ({
             </p>
             <p
               onClick={() => {
+                handleRegion('Asia');
+                invisible(false);
+              }}
+            >
+              Asia
+            </p>
+            <p
+              onClick={() => {
                 handleRegion('Europe');
                 invisible(false);
               }}
